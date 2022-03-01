@@ -19,14 +19,14 @@
       crossorigin="anonymous"
     />
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../CSS/style.css" />
     <title>Social Posts</title>
   </head>
   <body>
     <div class="container">
-      <h1><a href="/posts">Social Posts</a></h1>
+      <h1><a href="/">Social Posts</a></h1>
       <section class="wrap-form">
-        <section class="form">
+        <form action="/posts/addpost" method="POST" class="form">
           <div class="wrap-inputs">
             <div class="wrap-input">
               <label for="title" id="title-label">Title</label>
@@ -45,19 +45,18 @@
               <textarea
                 type="text"
                 id="description-input"
-                name="description"
+                name="body"
                 placeholder="what's on your mind.."
               ></textarea>
             </div>
           </div>
-          <a href=""
-            ><input
-              type="submit"
-              id="post-btn"
-              class="post-btn"
-              value="Add Post"
-          /></a>
-        </section>
+          <input
+            type="submit"
+            id="post-btn"
+            class="post-btn"
+            value="Add Post"
+          />
+        </form>
       </section>
 
       <main>
@@ -74,7 +73,7 @@
       </main>
     </div>
   </body>
-  <script src="JS/dom.js"></script>
-  <script src="JS/getData.js"></script>
-  <script src="JS/index.js"></script>
+  <script src="../JS/getData.js"></script>
+  <script src="../JS/dom.js"></script>
+  <script src="../JS/index.js"></script>
 </html>
