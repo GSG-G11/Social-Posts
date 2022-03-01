@@ -22,7 +22,54 @@
     <link rel="stylesheet" href="style.css" />
     <title>Social Posts</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1><a href="/posts">Social Posts</a></h1>
+      <section class="form">
+        <div class="wrap-inputs">
+          <div class="wrap-input">
+            <label for="title" id="title-label">Title</label>
+            <input
+              type="text"
+              id="title-input"
+              name="title"
+              placeholder="Title of your post"
+              required
+            />
+          </div>
+          <div class="wrap-input">
+            <label for="description" id="description-label">Description</label>
+            <textarea
+              type="text"
+              id="description-input"
+              name="description"
+              placeholder="what's on your mind.."
+            ></textarea>
+          </div>
+        </div>
+        <a href="/posts/addpost"
+          ><input type="submit" id="post-btn" class="post-btn" value="Add Post"
+        /></a>
+      </section>
+      <main>
+        <div class="cards">
+          <div class="card">
+            <a href="/posts/comments">
+              <h4 class="title-post">
+                sunt aut facere repellat provident occaecati excepturi optio
+                reprehenderit
+              </h4>
+              <p class="desc-post">
+                quia et suscipit\nsuscipit recusandae consequuntur expedita et
+                cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est
+                autem sunt rem eveniet architecto
+              </p>
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
   <script src="JS/getData.js"></script>
   <script src="JS/dom.js"></script>
   <script src="JS/index.js"></script>
