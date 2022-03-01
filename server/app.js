@@ -1,7 +1,6 @@
 /* eslint-disable linebreak-style */
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
 const compression = require('compression');
 const routerHome = require('./routes/home.router');
 const routerPosts = require('./routes/posts.router');
@@ -13,7 +12,6 @@ app.disable('x-powered-by');
 
 app.set('localhost', process.env.HOSTNAME || 'localhost');
 app.set('port', process.env.PORT || 3000);
-app.use(cors());
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
