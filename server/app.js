@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
@@ -9,6 +10,8 @@ const { clientError, serverError } = require('./controllers/error.controller');
 const app = express();
 
 app.disable('x-powered-by');
+
+app.set('localhost', process.env.HOSTNAME || 'localhost');
 app.set('port', process.env.PORT || 3000);
 app.use(cors());
 app.use(compression());
