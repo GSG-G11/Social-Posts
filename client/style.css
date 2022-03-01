@@ -1,0 +1,68 @@
+:root {
+  --white: #ffffff;
+  --main: #399df5;
+  --background: #f0f5fb;
+  --font: #212226;
+  --placeholder: #808080;
+  --yellow: #fdea81;
+  --red: #f85f61;
+  --purple: #877bfb;
+  --sec-blue: #2ed0f7;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Readex Pro', sans-serif;
+}
+
+input::placeholder {
+  font-family: 'Readex Pro', sans-serif;
+}
+
+body {
+  font-family: 'Readex Pro', sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: var(--white);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main);
+}
+
+::selection {
+  background-color: var(--main);
+}
+
+.container {
+}
