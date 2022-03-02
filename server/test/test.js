@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 // import request from 'supertest';
 const request = require('supertest');
 
@@ -8,9 +9,10 @@ describe('Route /', () => {
     request(app)
       .get('/')
       .expect(200)
-      .expect('Content-Type', /html/)
-      .end((err) => {
+      // .expect('Content-Type', /html/)
+      .end((err, res) => {
         if (err) return done(err);
+        expect(res.statusCode).toBe(200);
         return done();
       });
   });
@@ -105,12 +107,12 @@ describe('Not Found', () => {
 describe('Add new Post', () => {
   test('Route Post /addpost, status 201, json header', (done) => {
     request(app)
-      .post('/addpost')
-      .expect(201)
-      .expect('Content-Type', /json/)
+      .post('/posts/addpost')
+      .expect(302)
+      .expect('Content-Type', 'text/plain; charset=utf-8')
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.statusCode).toBe(201);
+        expect(res.statusCode).toBe(302);
         return done();
       });
   });
@@ -121,8 +123,9 @@ describe('Route /posts/:id/comments', () => {
     request(app)
       .get('/posts/1/comments')
       .expect(200)
-      .end((err) => {
+      .end((err, res) => {
         if (err) return done(err);
+        expect(res.statusCode).toBe(200);
         return done();
       });
   });
