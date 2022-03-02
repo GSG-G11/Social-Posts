@@ -22,6 +22,4 @@ app.use('/posts', routerPosts);
 app.use(clientError);
 app.use(serverError);
 
-app.listen(app.get('port'), () => {
-  console.log('App running on port', app.get('port'));
-});
+module.exports = app;
