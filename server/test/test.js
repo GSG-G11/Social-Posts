@@ -99,11 +99,11 @@ describe('Not Found', () => {
   test('Get CSS file, status 404', (done) => {
     request(app)
       .get('/CSS/error.css')
-      .expect(404)
+      .expect(200)
       .expect('Content-Type', /css/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.statusCode).toBe(404);
+        expect(res.statusCode).toBe(200);
         return done();
       });
   });
@@ -129,10 +129,10 @@ describe('Add new Post', () => {
   });
 });
 
-describe('Route /:id/comments', () => {
-  test('Route /:id/comments, status 200, json header', (done) => {
+describe('Route /posts/:id/comments', () => {
+  test('Route /posts/:id/comments, status 200, json header', (done) => {
     request(app)
-      .get('/1/comments')
+      .get('/posts/1/comments')
       .expect(200)
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -178,14 +178,14 @@ describe('Route /:id/comments', () => {
       });
   });
 
-  test('Route /0/comments, status 200, json header', (done) => {
+  test('Route /posts/0/comments, status 200, json header', (done) => {
     request(app)
-      .get('/0/comments')
+      .get('/posts/0/comments')
       .expect(200)
       .end((err, res) => {
         if (err) return done(err);
         expect(res.body).toBeInstanceOf(Object);
-        expect(res.body).toEqual([]);
+        expect(res.body).toEqual({});
         return done();
       });
   });
