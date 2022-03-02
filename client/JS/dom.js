@@ -10,7 +10,7 @@ const randomBgColor = (selector) => {
   const x = Math.floor(Math.random() * 256);
   const y = Math.floor(Math.random() * 256);
   const z = Math.floor(Math.random() * 256);
-  const bgColor = `rgb( ${x} , ${y} , ${z} )`;
+  const bgColor = `rgba( ${x}, ${y}, ${z}, .5 )`;
   // eslint-disable-next-line no-param-reassign
   selector.style.background = bgColor;
 };

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { join } = require('path');
 const getPostsApi = require('../models/getPosts');
-const getPostsCommentsApi = require('../models/getComments');
+const getDataAPI = require('../models/getDataAPI');
 
 const getPosts = (req, res) => {
   const urlApi = 'https://jsonplaceholder.typicode.com/posts';
@@ -26,7 +26,7 @@ const addPost = (req, res) => {
 
 const getComments = (req, res) => {
   const urlApi = `https://jsonplaceholder.typicode.com/posts/${req.params.id}/comments`;
-  getPostsCommentsApi(urlApi, res);
+  getDataAPI(urlApi, res);
 };
 
 module.exports = {

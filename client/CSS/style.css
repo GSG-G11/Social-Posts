@@ -68,6 +68,7 @@ a {
 }
 
 .container {
+  position: relative;
   width: 75%;
   height: 100%;
   margin: 0 auto;
@@ -84,43 +85,49 @@ a {
 
 .wrap-form {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-top: 30px;
-  padding: 30px 0px;
+  padding: 30px;
   border-radius: 16px;
   background-color: var(--background);
-  height: 17vh;
+  overflow: hidden;
 }
 
 .form {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .wrap-inputs {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
+  flex: 4;
 }
 
 .wrap-input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  margin-right: 30px;
 }
 
-.wrap-input {
-  margin-right: 30px;
+.wrap-input input:focus,
+.wrap-input textarea:focus {
+  border: 1px solid var(--main);
+}
+
+.wrap-input-desc {
+  flex-grow: 1;
 }
 
 .wrap-input input,
 textarea {
+  min-width: 100%;
   margin-top: 5px;
   background-color: var(--white);
-  width: 300px;
   height: 50px;
   border-radius: 8px;
   padding: 15px;
@@ -130,9 +137,9 @@ textarea {
   margin-top: 30px;
   background-color: var(--main);
   color: var(--white);
-  width: 150px;
   height: 50px;
   border-radius: 8px;
+  flex: 1;
   cursor: pointer;
 }
 
@@ -145,6 +152,20 @@ main {
   margin-top: 30px;
   overflow: auto;
   height: 80vh;
+}
+
+.loading {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--white);
+  padding: 15px;
+  border-radius: 8px;
+  z-index: 20;
 }
 
 .cards {
@@ -264,24 +285,24 @@ main {
   margin-top: 15px;
 }
 
-aside{
+aside {
   width: 25%;
   background-color: var(--background);
   height: 100vh;
 }
 
-.wrap-users{
+.wrap-users {
   padding: 30px;
   height: 100%;
 }
 
-.users{
+.users {
   margin-top: 10px;
   max-height: 90vh;
   overflow: auto;
 }
 
-.user{
+.user {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -292,18 +313,66 @@ aside{
   padding-left: 0;
 }
 
- .circel{
-   min-width: 50px;
-   min-height: 50px;
-   border-radius: 50%;
-   background-color: #f85f61;
- }
+.circel {
+  min-width: 50px;
+  min-height: 50px;
+  border-radius: 50%;
+  background-color: #f85f61;
+}
 
- .user-name{
-   color: var(--placeholder);
-   font-weight: 400;
- } 
+.user-name {
+  color: var(--placeholder);
+  font-weight: 400;
+}
 
-.wrap-name{
+.wrap-name {
   margin-left: 10px;
+}
+
+.wrap-name .name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/*  -------- media Query ------------- */
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 70%;
+  }
+
+  aside {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    width: 68%;
+  }
+
+  aside {
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 65%;
+  }
+
+  aside {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+
+  aside {
+    display: none;
+  }
 }
