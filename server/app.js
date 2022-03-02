@@ -4,6 +4,7 @@ const path = require('path');
 const compression = require('compression');
 const routerHome = require('./routes/home.router');
 const routerPosts = require('./routes/posts.router');
+const routerUsers = require('./routes/users.router');
 const { clientError, serverError } = require('./controllers/error.controller');
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, '..', 'client'), { maxAge: '30d' }))
 
 app.use('/', routerHome);
 app.use('/posts', routerPosts);
+app.use('/users', routerUsers);
 app.use(clientError);
 app.use(serverError);
 
