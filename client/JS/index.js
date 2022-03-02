@@ -1,6 +1,9 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable no-undef */
-window.addEventListener('load', getData);
+window.addEventListener('load', () => {
+  getData();
+  getUser();
+});
 
 cards.addEventListener('click', (e) => {
   const id = e.target.getAttribute('data-index');
