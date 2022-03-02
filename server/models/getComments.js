@@ -1,13 +1,10 @@
-const axios = require('axios');
+const fetch = require('node-fetch');
 
-const getPostsCommentsApi = (url, res) => {
-  axios
-    .get(url)
-    .then((response) => {
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end(JSON.stringify(response.data));
-    })
-    .catch();
-};
+const getPostsCommentsApi = (url, res) => fetch(url)
+  .then((data) => data.json())
+  .then((json) => {
+    res.json(json);
+  })
+  .catch();
 
 module.exports = getPostsCommentsApi;
