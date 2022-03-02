@@ -138,7 +138,7 @@ describe('Route /posts/:id/comments', () => {
       .end((err, res) => {
         if (err) return done(err);
         expect(res.body).toBeInstanceOf(Object);
-        expect(res.body).toEqual([
+        expect(res.body[0]).toEqual([
           {
             postId: 1,
             id: 1,
